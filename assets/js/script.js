@@ -1,43 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Display current day
-    const currentDayElement = document.getElementById('currentDay');
-    currentDayElement.textContent = dayjs().format('dddd, MMMM D');
+$(document).ready(function() {
+    // Display current day using Day.js
+    $('#currentDay').text(dayjs().format('dddd, MMMM D'));
 
     // Generate time blocks
-    const container = document.querySelector('.container');
     for (let hour = 9; hour <= 23; hour++) {
-        const timeBlock = document.createElement('div');
-        timeBlock.classList.add('row', 'time-block');
-        
-        const hourCol = document.createElement('div');
-        hourCol.classList.add('col-md-1', 'hour');
-        hourCol.textContent = dayjs().hour(hour).format('hA');
+        const timeBlock = $('<div>').addClass('row time-block');
+        const hourCol = $('<div>').addClass('col-md-1 hour').text(dayjs().hour(hour).format('hA'));
+        const eventCol = $('<textarea>').addClass('col-md-10 description').attr('id', `event-${hour}`);
+        eventCol.val(localStorage.getItem(`event-${hour}`) || ''); // Load saved event
 
-        const eventCol = document.createElement('textarea');
-        eventCol.classList.add('col-md-10', 'description');
-        eventCol.id = `event-${hour}`;
-        eventCol.value = localStorage.getItem(`event-${hour}`) || ''; // Load saved event
-
-        const saveBtn = document.createElement('button');
-        saveBtn.classList.add('col-md-1', 'saveBtn');
-        saveBtn.innerHTML = '<i class="fas fa-save"></i>';
-        saveBtn.addEventListener('click', function() {
-            localStorage.setItem(`event-${hour}`, eventCol.value); // Save to local storage
+        const saveBtn = $('<button>').addClass('col-md-1 saveBtn');
+        saveBtn.html('<i class="fas fa-save"></i>');
+        saveBtn.click(function() {
+            localStorage.setItem(`event-${hour}`, eventCol.val()); // Save to local storage
         });
 
         // Color coding
         const currentHour = dayjs().hour();
         if (hour < currentHour) {
-            eventCol.classList.add('past');
+            eventCol.addClass('past');
         } else if (hour === currentHour) {
-            eventCol.classList.add('present');
+            eventCol.addClass('present');
         } else {
-            eventCol.classList.add('future');
+            eventCol.addClass('future');
         }
 
-        timeBlock.appendChild(hourCol);
-        timeBlock.appendChild(eventCol);
-        timeBlock.appendChild(saveBtn);
-        container.appendChild(timeBlock);
+        timeBlock.append(hourCol, eventCol, saveBtn);
+        $('.container').append(timeBlock);
     }
 });
