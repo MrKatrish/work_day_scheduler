@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Generate time blocks
     const container = document.querySelector('.container');
-    for (let hour = 9; hour <= 22; hour++) {
+    for (let hour = 9; hour <= 23; hour++) {
         const timeBlock = document.createElement('div');
         timeBlock.classList.add('row', 'time-block');
         
