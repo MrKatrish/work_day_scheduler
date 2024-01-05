@@ -1,87 +1,72 @@
-# Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
-## Your Task
+## Description
+The Work Day Scheduler is a simple yet powerful calendar application designed to help busy employees manage their daily schedule effectively. Utilizing jQuery for dynamic HTML and CSS updates, and incorporating the Day.js library for accurate date and time handling, this browser-based app provides a user-friendly interface for event planning and time management.
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Table of Contents
 
-You'll need to use the [Day.js](https://day.js.org/docs/en/display/format) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Features](#features)
+  - [Screenshot and links](#screenshot-and-links)
+  - [Credits](#credits)
+  - [Technologies Used](#technologies-used)
 
-## User Story
+## Installation
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+To install this application:
 
-## Acceptance Criteria
+1. Clone the repository from GitHub.
 
-The app should:
+2. Open the **'index.html'** file in a modern web browser.
 
-* Display the current day at the top of the calender when a user opens the planner.
- 
-* Present time blocks for standard business hours when the user scrolls down.
- 
-* Color-code each time block based on past, present, and future when the time block is viewed.
- 
-* Allow a user to enter an event when they click a time block
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can clone the repository to your local machine! In Bash type:
 
-* Save the event in local storage when the save button is clicked in that time block.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`git clone https://github.com/MrKatrish/work_day_scheduler`
 
-* Persist events between refreshes of a page
+## Usage
 
-The following animation demonstrates the application functionality:
+1. Click on a time block to add an event.
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./images/05-third-party-apis-homework-demo.gif)
+2. Type in your event details.
 
+3. Click the save button to store the event in local storage.
 
-## Grading Requirements
+4. Events will be retained even after the browser is refreshed.
 
-This homework is graded based on the following criteria: 
+## Features
 
-### Technical Acceptance Criteria: 40%
+- **Dynamic Date Display:** Shows the current day at the top of the calendar.
 
-* Satisfies all of the above acceptance criteria plus the following:
+- **Interactive Time Blocks:** Editable blocks for each hour of the standard business day.
 
-  * Uses a date utility library to work with date and time
+- **Color-Coded Blocks:** Time blocks are color-coded to indicate past, present, or future.
 
-### Deployment: 32%
+- **Local Storage Integration:** Events are saved locally to persist between sessions.
 
-* Application deployed at live URL
+## Screenshot and links
 
-* Application loads with no errors
+![my webpage](assets/WebpageScreenShot.png)
 
-* Application GitHub URL submitted
+### Link to my application
 
-* GitHub repo contains application code
+https://mrkatrish.github.io/work_day_scheduler/
 
-### Application Quality: 15%
+## Credits
 
-* Application user experience is intuitive and easy to navigate
+Special thanks to everyone who contributed to the development of this project:
 
-* Application user interface style is clean and polished
+- The instructor and teaching assistant from edX School for their support, valuable insights, and dedicated tutoring.
+- Day.js Team for their comprehensive date-time management library.
+- jQuery for simplifying HTML document traversal and manipulation.
+- The [Mozilla Developer Network](https://developer.mozilla.org/en-US/) and [W3Schools](https://www.w3schools.com/) for excellent documentation and assistance in understanding web technologies.
+- My amazing group mates for collaboration, idea exchange, and creating a positive atmosphere.
 
-* Application resembles the mock-up functionality provided in the homework instructions
+Thanks for your dedication and support!
 
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Technologies Used
+- HTML5
+- CSS3
+- jQuery
+- Day.js
