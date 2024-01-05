@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Display current day
     const currentDayElement = document.getElementById('currentDay');
-    currentDayElement.textContent = dayjs().format('dddd, MMMM D, YYYY');
+    currentDayElement.textContent = dayjs().format('dddd, MMMM D');
 
     // Generate time blocks
     const container = document.querySelector('.container');
-    for (let hour = 9; hour <= 17; hour++) {
+    for (let hour = 9; hour <= 22; hour++) {
         const timeBlock = document.createElement('div');
         timeBlock.classList.add('row', 'time-block');
         
